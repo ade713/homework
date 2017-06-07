@@ -6,7 +6,7 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
-  subject(:cupcake) { Dessert.new("cupcake", 12, chef)}
+  subject(:cupcake) { Dessert.new("cupcake", 12, "Gordon")}
   let(:chef) { double("chef") }
 
   describe "#initialize" do
@@ -22,7 +22,9 @@ describe Dessert do
       expect(cupcake.ingredients.size).to eq(0)
     end
 
-    it "raises an argument error when given a non-integer quantity"
+    it "raises an argument error when given a non-integer quantity" do
+      expect { Dessert.new("cupcake", "one-two", "Gordon") }.to raise_error(ArgumentError)
+    end
   end
 
   describe "#add_ingredient" do
