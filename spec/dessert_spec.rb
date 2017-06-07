@@ -6,7 +6,7 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
-  subject(:cupcake) { Dessert.new("cupcake", 15, chef)}
+  subject(:cupcake) { Dessert.new("cupcake", 12, chef)}
   let(:chef) { double("chef") }
 
   describe "#initialize" do
@@ -14,7 +14,9 @@ describe Dessert do
       expect(cupcake.type).to eq("cupcake")
     end
 
-    it "sets a quantity"
+    it "sets a quantity" do
+      expect(cupcake.quantity).to eq(12)
+    end
 
     it "starts ingredients as an empty array"
 
