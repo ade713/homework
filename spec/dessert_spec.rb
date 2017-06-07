@@ -18,7 +18,9 @@ describe Dessert do
       expect(cupcake.quantity).to eq(12)
     end
 
-    it "starts ingredients as an empty array"
+    it "starts ingredients as an empty array" do
+      expect(cupcake.ingredients.size).to eq(0)
+    end
 
     it "raises an argument error when given a non-integer quantity"
   end
