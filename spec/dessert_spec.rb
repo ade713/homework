@@ -35,11 +35,19 @@ describe Dessert do
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    let(:ingredients) { ["sugar", "spice", "cherry"]}
+
+    it "shuffles the ingredient array" do
+      cupcake.mix!
+      expect(cupcake.ingredients).not_to eql(["sugar", "spice", "cherry"])
+    end
   end
 
   describe "#eat" do
-    it "subtracts an amount from the quantity"
+    it "subtracts an amount from the quantity" do
+      cupcake.eat(4)
+      expect(cupcake.quantity).to eq(8)
+    end
 
     it "raises an error if the amount is greater than the quantity"
   end
